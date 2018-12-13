@@ -14,3 +14,8 @@ type gameState =
   | Playing(player)
   | Winner(player)
   | Draw;
+
+type state = {
+  board,
+  gameState,
+};

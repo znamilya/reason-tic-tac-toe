@@ -1,8 +1,17 @@
+open SharedTypes;
+
 let component = ReasonReact.statelessComponent("Board");
 let toString = ReasonReact.string;
 
-let make = (~state, ~onMark, _children) => {
+let make = (~state: state, ~onMark, _children) => {
   ...component,
   render: _self =>
-    <div onClick=(_evt => onMark())> (toString("Board")) </div>,
+    <div className="game-board">
+      {state.board
+       |> List.mapi((index: int, row: row) =>
+            <Row rowIndex=index row onMark key={string_of_int(index)} />
+          )
+       |> Array.of_list
+       |> ReasonReact.array}
+    </div>,
 };
