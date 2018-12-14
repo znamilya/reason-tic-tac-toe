@@ -9,8 +9,6 @@ let make = (~rowIndex: int, ~row: row, ~onMark, _children) => {
       {row
        |> List.mapi((index: int, cell: field) =>
             <Cell
-              index
-              rowIndex
               cell
               onMark={_evt =>
                 onMark(string_of_int(rowIndex) ++ string_of_int(index))

@@ -9,7 +9,7 @@ let toValue = (cell: field) =>
 
 let component = ReasonReact.statelessComponent("Cell");
 
-let make = (~index: int, ~rowIndex: int, ~cell: field, ~onMark, _children) => {
+let make = (~cell: field, ~onMark, _children) => {
   ...component,
   render: _self => {
     <div className="cell" onClick={_evt => onMark()}>

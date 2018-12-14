@@ -2,6 +2,11 @@ type player =
   | Cross
   | Cyrcle;
 
+type winner =
+  | Cross
+  | Cyrcle
+  | NoOne;
+
 type field =
   | Empty
   | Marked(player);
